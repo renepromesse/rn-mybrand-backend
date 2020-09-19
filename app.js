@@ -10,7 +10,7 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
-const mongoose_uri ='mongodb+srv://renepromesse:renepromesse@rene-mybrand-db.2cl0f.gcp.mongodb.net/<dbname>?retryWrites=true&w=majority';
+const mongoose_uri ='mongodb+srv://renepromesse:renepromesse@rene-mybrand-db.2cl0f.gcp.mongodb.net/restAPI?retryWrites=true&w=majority';
 
 const db = require("./app/models");
 db.mongoose
