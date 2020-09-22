@@ -7,6 +7,7 @@ const mongoose= require("mongoose");
 //improt routes
 const blogRoute= require("./routes/blog");
 const contactRoute= require("./routes/contact");
+const loginRoute= require("./routes/login");
 
 dotenv.config();
 //connect to db
@@ -31,6 +32,7 @@ app.get("/",(req,res)=>{
 
 app.use("/api", blogRoute);
 app.use("/api", contactRoute);
+app.use("/api", loginRoute);
 
 
 //listen to a port
