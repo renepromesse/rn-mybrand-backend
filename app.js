@@ -8,7 +8,10 @@ const mongoose= require("mongoose");
 const blogRoute= require("./routes/blog");
 const contactRoute= require("./routes/contact");
 const loginRoute= require("./routes/login");
+<<<<<<< HEAD
 const messagesRoute= require("./routes/messages");
+=======
+>>>>>>> develop
 
 dotenv.config();
 //connect to db
@@ -34,7 +37,10 @@ app.get("/",(req,res)=>{
 app.use("/api", blogRoute);
 app.use("/api", contactRoute);
 app.use("/api", loginRoute);
+<<<<<<< HEAD
 app.use("/api", messagesRoute);
+=======
+>>>>>>> develop
 
 
 //listen to a port
