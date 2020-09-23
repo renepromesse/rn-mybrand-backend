@@ -1,0 +1,31 @@
+{
+  "name": "rn-mybrand-backend",
+  "version": "1.0.0",
+  "description": "api for rene-mybrand project",
+  "main": "app.js",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renepromesse/rn-mybrand-backend.git"
+  },
+  "author": "Rene Promesse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renepromesse/rn-mybrand-backend/issues"
+  },
+  "homepage": "https://github.com/renepromesse/rn-mybrand-backend#readme"
+}
