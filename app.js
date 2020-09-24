@@ -9,6 +9,7 @@ const blogRoute= require("./routes/blog");
 const contactRoute= require("./routes/contact");
 const loginRoute= require("./routes/login");
 const messagesRoute= require("./routes/messages");
+const read_commentRoute= require("./routes/read");
 
 dotenv.config();
 //connect to db
@@ -35,6 +36,7 @@ app.use("/api", blogRoute);
 app.use("/api", contactRoute);
 app.use("/api", loginRoute);
 app.use("/api", messagesRoute);
+app.use("/api", read_commentRoute);
 
 
 //listen to a port
