@@ -14,7 +14,7 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required:true,
         min:10,
-        max:500
+        max:1000
     },
     date:{
         type:Date,
