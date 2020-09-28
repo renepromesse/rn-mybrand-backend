@@ -14,15 +14,18 @@ const articlesRoute= require("./routes/articles");
 
 dotenv.config();
 //connect to db
-mongoose.connect(process.env.DB_LINK,
+const connecting = async function () {
+    await mongoose.connect(process.env.DB_LINK,
     { useUnifiedTopology: true,
-    useNewUrlParser: true }
-).then(()=>{
-    console.log("connected to db...");
-}).catch(err=>{
-    console.log(err);
-});
+    useNewUrlParser: true })
+    .then(()=>{
+        console.log("connected to db...");
+    }).catch(err=>{
+        console.log(err);
+    });
+}
 
+connecting();
 
 //middlewares
 app.use(express.json());
@@ -40,8 +43,4 @@ app.use("/api", messagesRoute);
 app.use("/api", read_commentRoute);
 app.use("/api", articlesRoute);
 
-
-//listen to a port
-let port = process.env.PORT || 5000;
-app.listen(port,() => console.log("server is up and running..."));
-
+module.exports = app;
