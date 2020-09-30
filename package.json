@@ -2,7 +2,7 @@
   "name": "rn-mybrand-backend",
   "version": "1.0.0",
   "description": "api for rene-mybrand project",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
     "body-parser": "^1.19.0",
@@ -13,10 +13,14 @@
     "mongoose": "^5.10.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "jest": "^26.4.2",
+    "node-mocks-http": "^1.9.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^5.0.0"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
