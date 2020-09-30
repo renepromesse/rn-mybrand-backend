@@ -1,6 +1,7 @@
 const supertest = require("supertest");
 const testData = require("../test-data/newContact.json");
 const app = require("../../app");
+const mongoose = require('mongoose');
 
 const endpointURL= "/api/contact";
 
@@ -10,7 +11,7 @@ describe(endpointURL,() =>{
         const response = await supertest(app).get(endpointURL);
         expect(response.statusCode).toBe(200);
         expect(response.body).toStrictEqual({message:"Welcome on contact Page"});
-    },20000);
+    },30000);
 
     it("POST"+ endpointURL, async ()=>{
         const response = await supertest(app)
@@ -29,5 +30,7 @@ describe(endpointURL,() =>{
     });
 });
 
-
+afterAll(async () =>{
+    await mongoose.connection.close();
+});
 

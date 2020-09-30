@@ -3,6 +3,7 @@ const supertest = require ('supertest');
 const app = require('../../app');
 const testLogin = require('../test-data/newLogin.json');
 const testArticle = require('../test-data/newArticle.json');
+const mongoose = require('mongoose');
 
 let token;
 let oneArticle;
@@ -45,6 +46,7 @@ describe("POST /api/login", () =>{
         expect(response.type).toBe("application/json");
         expect(response.body).toStrictEqual({message:"Incorrect email or password"});
     }, 30000);
+
 });
 
 describe("GET /api/messages with a jwt", ()=>{
@@ -68,7 +70,6 @@ describe("GET /api/messages with a jwt", ()=>{
         expect(response.body).toStrictEqual({ message :"Access Denied!"});
     });
 
-
 });
 
 
@@ -86,6 +87,7 @@ describe("GET /api/articles", () =>{
         expect(response.type).toBe("application/json");
         expect(response.body).toStrictEqual({ message :"Access Denied!"});
     },30000);
+
 });
 
 
@@ -169,4 +171,9 @@ describe("DELETE /api/articles/id", () =>{
         expect(response.type).toBe("application/json");
         expect(response.body).toStrictEqual({ message :"Access Denied!"});
     },30000);
+});
+
+
+afterAll(async () =>{
+    await mongoose.connection.close();
 });

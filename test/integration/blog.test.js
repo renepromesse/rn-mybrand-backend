@@ -1,6 +1,7 @@
 const supertest = require("supertest");
 const app = require("../../app");
 const testComment = require('../test-data/newComment.json');
+const mongoose = require('mongoose');
 
 const endpointURL= "/api/blog/";
 let oneArticleId;
@@ -46,4 +47,8 @@ describe("POST /api/blog/id a comment", () =>{
         .send({ "invalidData":"This is an error"});
         expect(response.statusCode).toBe(500);
     });
-})
+});
+
+afterAll(async () =>{
+    await mongoose.connection.close();
+});
