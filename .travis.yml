@@ -1,11 +1,10 @@
 language: node_js
 node_js:
-  - '14'
+  - "stable"
 install: npm install
 services:
   - mongodb
-script: npm test
+script: 
+  - npm test
+  - npm run build
 after_success: npm run coverage
-cache:
-  directories:
-    - node_modules
