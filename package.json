@@ -26,6 +26,9 @@
     "type": "git",
     "url": "git+https://github.com/renepromesse/rn-mybrand-backend.git"
   },
+  "engines": {
+    "node": "14.11.0"
+  },
   "author": "Rene Promesse",
   "license": "ISC",
   "bugs": {
