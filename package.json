@@ -13,6 +13,7 @@
     "mongoose": "^5.10.6"
   },
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "jest": "^26.4.2",
     "node-mocks-http": "^1.9.0",
     "nodemon": "^2.0.4",
@@ -20,7 +21,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "coverage": "npm run test && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
