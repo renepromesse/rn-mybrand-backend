@@ -26,6 +26,8 @@ describe(endpointURL,() =>{
         .send({invalidData: "This is an error."});
         expect(response.statusCode).toBe(400);
         
-    })
+    });
 });
+
+
 

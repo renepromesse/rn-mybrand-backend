@@ -4,5 +4,5 @@ const Message= require('../model/contact');
 
 exports.viewMessages = function (req,res){
     Message.find()
-   .then((data) =>res.send(data) );
+   .then((data) =>res.status(200).json(data) );
 }

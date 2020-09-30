@@ -6,6 +6,4 @@ describe("blogController.listArticles", () =>{
         expect(typeof blogController.listArticles).toBe("function");
 
     });
- 
-
 })
